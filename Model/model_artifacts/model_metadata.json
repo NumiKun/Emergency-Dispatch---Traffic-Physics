@@ -1,0 +1,137 @@
+{
+  "task": "Road Closure Duration Regression",
+  "target_column": "Road_Closure_Duration_min",
+  "target_transform": "log1p / expm1",
+  "random_seed": 42,
+  "train_size": 5761,
+  "val_size": 823,
+  "test_size": 1647,
+  "n_features": 30,
+  "numerical_features": [
+    "Speed_Limit_kmh",
+    "Congestion_Index",
+    "Driver_Age",
+    "Vehicle_Age_yrs",
+    "Recorded_Speed_kmh",
+    "Baseline_Expected_Response_Time_min",
+    "Actual_Response_Time_min",
+    "Vehicles_Involved",
+    "Visibility_m",
+    "friction_coeff",
+    "stopping_distance_m",
+    "kinetic_energy_kJ",
+    "speed_deviation",
+    "speed_deviation_sq",
+    "response_delay",
+    "driver_inexperience",
+    "low_visibility_flag",
+    "hour_sin",
+    "hour_cos",
+    "month_sin",
+    "month_cos",
+    "Is_Holiday"
+  ],
+  "ordinal_features": [
+    "Accident_Severity",
+    "Dispatch_Priority"
+  ],
+  "nominal_features": [
+    "Area_Type",
+    "Road_Type",
+    "Intersection_Type",
+    "Weather",
+    "Road_Condition",
+    "Vehicle_Type"
+  ],
+  "best_model_type": "XGBoost",
+  "best_hyperparameters": {
+    "model__subsample": 0.7,
+    "model__reg_lambda": 1.5,
+    "model__reg_alpha": 0.05,
+    "model__n_estimators": 700,
+    "model__min_child_weight": 5,
+    "model__max_depth": 4,
+    "model__learning_rate": 0.01,
+    "model__gamma": 0,
+    "model__colsample_bytree": 0.9
+  },
+  "cv_folds": 5,
+  "n_iter_search": 60,
+  "final_test_metrics": {
+    "RMSE_min": 25.5107,
+    "MAE_min": 16.0825,
+    "MAPE_pct": 9.5165,
+    "R2": 0.961898,
+    "MedAE_min": 11.1342
+  },
+  "benchmark_results": [
+    {
+      "Model": "XGBoost",
+      "CV RMSE (log-scale)": 0.15883,
+      "CV Std": 0.00573,
+      "Val RMSE (min)": 29.65,
+      "Val MAE (min)": 17.67,
+      "Val MAPE (%)": 10.52,
+      "Val R2": 0.9338
+    },
+    {
+      "Model": "LightGBM",
+      "CV RMSE (log-scale)": 0.15963,
+      "CV Std": 0.0058,
+      "Val RMSE (min)": 29.99,
+      "Val MAE (min)": 17.86,
+      "Val MAPE (%)": 10.58,
+      "Val R2": 0.9322
+    },
+    {
+      "Model": "Random Forest",
+      "CV RMSE (log-scale)": 0.15773,
+      "CV Std": 0.00549,
+      "Val RMSE (min)": 30.35,
+      "Val MAE (min)": 18.01,
+      "Val MAPE (%)": 10.56,
+      "Val R2": 0.9306
+    },
+    {
+      "Model": "Ridge",
+      "CV RMSE (log-scale)": 0.17458,
+      "CV Std": 0.00354,
+      "Val RMSE (min)": 37.52,
+      "Val MAE (min)": 22.07,
+      "Val MAPE (%)": 12.01,
+      "Val R2": 0.8939
+    }
+  ],
+  "winsorization_bounds": {
+    "Road_Closure_Duration_min": [
+      70.8,
+      871.3399999999999
+    ],
+    "Recorded_Speed_kmh": [
+      16.93,
+      128.9
+    ],
+    "Visibility_m": [
+      185.02999999999997,
+      14165.672
+    ],
+    "Congestion_Index": [
+      9.0,
+      100.0
+    ]
+  },
+  "friction_map": {
+    "dry": 0.75,
+    "wet": 0.42,
+    "snowy": 0.28,
+    "icy": 0.1,
+    "standing water": 0.35
+  },
+  "vehicle_mass_map": {
+    "sedan": 1400,
+    "suv": 2000,
+    "truck": 8000,
+    "motorcycle": 220,
+    "bus": 12000
+  }
+}

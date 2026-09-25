@@ -1,0 +1,22 @@
+{
+  "Accident_Severity": 0.3388075828552246,
+  "friction_coeff": 0.11832693219184875,
+  "Dispatch_Priority": 0.05774974077939987,
+  "Vehicle_Type": 0.031416524201631546,
+  "Actual_Response_Time_min": 0.02928335964679718,
+  "Vehicles_Involved": 0.025840558111667633,
+  "Road_Condition": 0.014600555412471294,
+  "kinetic_energy_kJ": 0.00836455449461937,
+  "response_delay": 0.008030249737203121,
+  "speed_deviation": 0.006528913043439388,
+  "Baseline_Expected_Response_Time_min": 0.005997627042233944,
+  "Recorded_Speed_kmh": 0.004401763901114464,
+  "Visibility_m": 0.00207052705809474,
+  "driver_inexperience": 0.001954699167981744,
+  "stopping_distance_m": 0.0018999598687514663,
+  "Congestion_Index": 0.001789706526324153,
+  "Vehicle_Age_yrs": 0.0015622122446075082,
+  "Weather": 0.0014872150495648384,
+  "speed_deviation_sq": 0.0012505041668191552,
+  "month_cos": 0.0011695068096742034
+}
